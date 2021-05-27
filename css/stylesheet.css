@@ -1,0 +1,98 @@
+* {
+    box-sizing:border-box;
+}
+#banner{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(219, 210, 210, 0.5)),url(../Images/man-walk.jpg);
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+#featured-pr{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(219, 210, 210, 0.5)),url(../Images/orange-wool.jpg);
+    height: 10%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+#featured-product-1{
+    width: 100%;
+    padding: 5px;
+}
+#featured-product-2{
+    width: 100%;
+    padding: 5px;
+}
+#featured-product-3{
+    width: 100%;
+    padding: 5px;
+}
+#title{
+    text-align: center;
+    padding-top: 20%;
+}
+#products-text{
+    text-align: center;
+    padding-top: 50%;;
+}
+#featured {
+    padding-top: 50%;
+    padding-left: 20%;
+}
+#collection-text{
+    text-align: center;
+}
+#denim-text{
+    text-align: center;
+}
+#collection-header{
+    padding: 10px;
+    background-color: #caa3a375;
+}
+  #slder{
+      overflow: hidden;
+  }
+  #slder figure{
+      position: relative;
+      width: 500%;
+      margin: 0;
+      left: 0;
+      animation: 20s slder infinite;
+      height: 300%;
+  }
+  #slder figure img{
+      width: 20%;
+      float: left;
+  }
+  @keyframes slder{
+      0% {
+          left: 0;
+      }
+      20% {
+          left: 0;
+      }
+      25% {
+          left: -100%;
+      }
+      45% {
+          left: -100%;
+      }
+      50% {
+          left: -200%;
+      }
+      70% {
+          left: -200%;
+      }
+      75% {
+          left: -300%;
+      }
+      95%{
+          left: -300%;
+      }
+      100%{
+          left: -400%;
+      }
+  }
