@@ -30,6 +30,10 @@
     width: 100%;
     padding: 5px;
 }
+#featured-products-row img{
+    width: 100%;
+    padding: 5px;
+}
 #title{
     text-align: center;
     padding-top: 20%;
