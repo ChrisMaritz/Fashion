@@ -115,4 +115,22 @@
   #lookbook-img img{
     width: 100%;
     padding: 5px;
+    transition: transform .2s;
   }
+  #lookbook-img:hover img{
+      transform: scale(1.5);
+  }
+  #lookbook-h1 h1{
+      text-align: center;
+  }
+  #navigation-lookbook{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0%;
+    z-index: 300;
+    height: 10;
+}
+#navigation-lookbook a{
+    text-decoration: none;
+    color: inherit;
+}
