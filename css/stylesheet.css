@@ -6,11 +6,12 @@
     position: sticky;
     top: 0%;
     z-index: 300;
-    height: 0;
+    height: 3%;
+    background-color: black;
 }
 #navigation a{
     text-decoration: none;
-    color: inherit;
+    color: white;
 }
 #banner{
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(219, 210, 210, 0.5)),url(../Images/man-walk.jpg);
@@ -45,7 +46,7 @@
     width: 100%;
     padding: 5px;
 }
-#title{
+#TMR-txt{
     text-align: center;
     padding-top: 20%;
 }
@@ -65,7 +66,7 @@
 }
 #collection-header{
     padding: 10px;
-    background-color: #caa3a375;
+    border-style: solid;
 }
   #slder{
       overflow: hidden;
@@ -128,9 +129,47 @@
     position: sticky;
     top: 0%;
     z-index: 300;
-    height: 10;
+    height: 3%;
+    background-color: black;
 }
 #navigation-lookbook a{
     text-decoration: none;
-    color: inherit;
+    color: white;
+}
+/* Shop */
+#shop-items img{
+    width: 100%;
+    padding: 5px;
+}
+#shop-txt{
+    text-align: center;
+}
+#add-to-cart{
+        position: relative;
+        border-style: solid;
+        text-align: center;
+        padding: 2px;   
+}
+#title{
+    position: relative;
+    border-style: solid;
+    text-align: center;
+    padding: 2px;   
+}
+#items-div{
+    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+#navigation-shop{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0%;
+    z-index: 300;
+    height: 3%;
+    background-color: black;
+}
+#navigation-shop a{
+    text-decoration: none;
+    color: white;
 }
