@@ -1,6 +1,17 @@
 * {
     box-sizing:border-box;
 }
+#navigation{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0%;
+    z-index: 300;
+    height: 0;
+}
+#navigation a{
+    text-decoration: none;
+    color: inherit;
+}
 #banner{
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(219, 210, 210, 0.5)),url(../Images/man-walk.jpg);
     height: 100%;
@@ -99,4 +110,9 @@
       100%{
           left: -400%;
       }
+  }
+  /* Lookbook */
+  #lookbook-img img{
+    width: 100%;
+    padding: 5px;
   }
