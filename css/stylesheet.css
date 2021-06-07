@@ -253,4 +253,25 @@ input#contact-txt-input {
 #profiles-div{
     padding-right: 200px;
     padding-left:200px;
+    padding-bottom: 200px;
+}
+#contact-txt{
+    text-align: center;
+}
+#name-txt{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#email-txt{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#submit-txt{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#contact-info{
+    padding-right: 200px;
+    padding-left:200px;
+    padding-bottom: 100px;
 }
