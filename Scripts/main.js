@@ -6,3 +6,7 @@ function initMap() {
         center: location
     });
 }
+
+function addToCart(item){
+    item = 
+}
