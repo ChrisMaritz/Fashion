@@ -6,7 +6,6 @@
     position: sticky;
     top: 0%;
     z-index: 300;
-    height: 3%;
     background-color: black;
 }
 #navigation a{
@@ -51,11 +50,13 @@
 }
 #products-text{
     text-align: center;
-    padding-top: 50%;;
+    padding-right: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 #featured {
-    padding-top: 50%;
-    padding-left: 20%;
+   text-align: center;
+ padding-bottom: 10px;
 }
 #collection-text{
     text-align: center;
@@ -65,7 +66,6 @@
 }
 #collection-header{
     padding: 10px;
-    border-style: solid;
 }
   #slder{
       overflow: hidden;
@@ -128,7 +128,6 @@
     position: sticky;
     top: 0%;
     z-index: 300;
-    height: 3%;
     background-color: black;
 }
 #navigation-lookbook a{
@@ -136,6 +135,12 @@
     color: white;
 }
 /* Shop */
+#price{
+    text-align: center;
+}
+#cart-icon{
+    color: white;
+}
 #shop-items img{
     width: 100%;
     padding: 5px;
@@ -165,7 +170,6 @@
     position: sticky;
     top: 0%;
     z-index: 300;
-    height: 3%;
     background-color: black;
 }
 #navigation-shop a{
@@ -181,7 +185,6 @@
     position: sticky;
     top: 0%;
     z-index: 300;
-    height: 3%;
     background-color: black;
 }
 #navigation-about a{
@@ -274,4 +277,44 @@ input#contact-txt-input {
     padding-right: 200px;
     padding-left:200px;
     padding-bottom: 100px;
+}
+/* cart */
+#cart-text{
+    text-align: center;
+}
+#products-container{
+    max-width: 650px;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: 50pxz;
+}
+#products-header{
+    width: 100%;
+    max-width: 650px;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 4px solid lightgrey;
+    margin: 0 auto;
+}
+#product-title{
+    width: 45%;
+}
+#price{
+    width: 15%;
+    border-bottom: 4px solid lightgrey;
+    display: flex;
+    align-items: center;
+}
+#total{
+    width: 10%;
+    display: flex;
+    align-items: center;
+}
+#product{
+    width: 45%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid lightgrey;
 }
