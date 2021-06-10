@@ -11,7 +11,7 @@
 <body>
     <div class="container-fluid">
         <div class="row" id="navigation-about">
-            <div class="col-md-2">
+            <div class="col-xs-12">
                 <a href="#about-txt">-BACK TO TOP-</a>
             </div>
             <div class="col-md-2">
@@ -30,32 +30,31 @@
                 <a href="about-index.html">ABOUT</a>
             </div>
             <div class="col-md-1">
-                <a href="about-index.html" id="cart"><ion-icon id="cart-icon" name="bag-outline"></ion-icon>CART <span>0</span></a>
+                <a href="about-index.html" id="cart">CART <span>0</span></a>
             </div>
         </div>
-        <div class="row">
-            <h1 id="cart-text">CART</h1>
-        </div>
-        <div id="products-container" class="row">
-            <div id="products-header">
-                <h5 id="products-title" class="col-sm-3">
-                    PRODUCT
-                </h5>
-                <h5 id="prices" class="col-sm-3">
-                    PRICE
-                </h5>
-                <h5 id="quantity" class="col-sm-3">
-                    QUANTITY
-                </h5>
-                <h5 id="total" class="col-sm-3">
-                    TOTAL
-                </h5>
+        <div id="cart-container">
+            <div class="row">
+                <h1 id="cart-text">CART</h1>
             </div>
-            <div id="product">
-
+            <div class="row">
+                <div class="col-xs-12" id="products">
+                    <h5>Product</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12" id="product-price">
+                    <h5>price</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12" id="total-price">
+                    <h5>Total</h5>
+                </div>
             </div>
         </div>
     </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 <script src="Scripts/main.js"></script>
 </html>

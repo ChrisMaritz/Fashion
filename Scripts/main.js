@@ -189,20 +189,38 @@ function totalCost(product){
         localStorage.setItem("totalCost", product.price);
     }
 }
-function displayCart(){
-    let cartItems = localStorage.getItem("productsInCart");
-    cartItems = JSON.parse(cartItems);
-    let productContainer = document.getElementById("product");
-    if (cartItems && productContainer){
-        productContainer.innerHTML = "";
-        Object.values(cartItems).map(item, () => {
-            productContainer.innerHTML += `
-            <div id="product>
-            <ul><li>${item.name}</li></ul>
-            </div>
-            `
-        });
+// function displayCart(){
+//     let cartItems = localStorage.getItem("productsInCart");
+//     cartItems = JSON.parse(cartItems);
+//     let productContainer = document.getElementById("product");
+//     if (cartItems && productContainer){
+//         productContainer.innerHTML = "";
+//         Object.values(cartItems).map(item, () => {
+//             productContainer.innerHTML += `
+//             <div id="product>
+//             <ul><li>${item.name}</li></ul>
+//             </div>
+//             `
+//         });
+//     }
+// }
+let cartItems = localStorage.getItem("productsInCart");
+cartItems = JSON.parse(cartItems);
+let cart = new Vue ({
+    el : "#cart-container",
+    data : {
+        price : "hello"
+
+    },
+    methods : {
+        displayCart : function (){
+            let cartItems = localStorage.getItem("productsInCart");
+            console.log("hello")
+            
+        },
+        created : function(){
+            this.displayCart();
+        }
     }
-}
+})
 onLoadCartNumbers();
-displayCart();
