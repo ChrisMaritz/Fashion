@@ -204,23 +204,16 @@ function totalCost(product){
 //         });
 //     }
 // }
-let cartItems = localStorage.getItem("productsInCart");
-cartItems = JSON.parse(cartItems);
-let cart = new Vue ({
-    el : "#cart-container",
-    data : {
-        price : "hello"
+function cartDisplay(){
+    let cartItems = localStorage.getItem("productsInCart");
+    cartItems = JSON.parse(cartItems);
+    let result = Object.values(cartItems).filter(obj => {
+        let itemName = obj.name
+        console.log(itemName);
+        document.getElementById("nameDisplay").innerHTML = itemName;
+    });
+}
 
-    },
-    methods : {
-        displayCart : function (){
-            let cartItems = localStorage.getItem("productsInCart");
-            console.log("hello")
-            
-        },
-        created : function(){
-            this.displayCart();
-        }
-    }
-})
+
 onLoadCartNumbers();
+cartDisplay();

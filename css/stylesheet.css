@@ -2,6 +2,7 @@
     box-sizing:border-box;
 }
 #navigation{
+    text-align: center;
     position: -webkit-sticky;
     position: sticky;
     top: 0%;
@@ -124,6 +125,7 @@
       text-align: center;
   }
   #navigation-lookbook{
+    text-align: center;
     position: -webkit-sticky;
     position: sticky;
     top: 0%;
@@ -167,6 +169,7 @@
 }
 #navigation-shop{
     position: -webkit-sticky;
+    text-align: center;
     position: sticky;
     top: 0%;
     z-index: 300;
@@ -182,6 +185,7 @@
 }
 #navigation-about{
     position: -webkit-sticky;
+    text-align: center;
     position: sticky;
     top: 0%;
     z-index: 300;
@@ -239,19 +243,19 @@ input#contact-txt-input {
     padding: 20px;
 }
 #pr-div{
-    padding-right: 200px;
-    padding-left:200px ;
+    padding-right: 10%;
+    padding-left:10% ;
 }
 #logo{
     width: 100%;
 }
 #background-about-us{
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 #profile-txt{
     text-align: center;
-    padding: 20px;
+    padding: 2%;
 }
 #profiles-div{
     padding-right: 200px;
@@ -274,9 +278,9 @@ input#contact-txt-input {
     margin-bottom: 5px;
 }
 #contact-info{
-    padding-right: 200px;
-    padding-left:200px;
-    padding-bottom: 100px;
+    padding-right: 10%;
+    padding-left:10%;
+    padding-bottom: 10%;
 }
 /* cart */
 #cart-text{
@@ -290,4 +294,16 @@ input#contact-txt-input {
 }
 #total-price{
     padding-left:20% ;
+}
+#navigation-cart{
+    text-align: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0%;
+    z-index: 300;
+    background-color: black;
+    }
+#navigation-cart a{
+    text-decoration: none;
+    color: white;
 }
