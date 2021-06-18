@@ -208,9 +208,9 @@ function cartDisplay(){
     let cartItems = localStorage.getItem("productsInCart");
     cartItems = JSON.parse(cartItems);
     let result = Object.values(cartItems).filter(obj => {
-        let itemName = obj.name
+        let itemName = obj.name;
         console.log(itemName);
-        document.getElementById("nameDisplay").innerHTML = itemName;
+        document.getElementById("products").append(itemName);
     });
 }
 
