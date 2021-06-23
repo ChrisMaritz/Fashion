@@ -189,31 +189,34 @@ function totalCost(product){
         localStorage.setItem("totalCost", product.price);
     }
 }
-// function displayCart(){
-//     let cartItems = localStorage.getItem("productsInCart");
-//     cartItems = JSON.parse(cartItems);
-//     let productContainer = document.getElementById("product");
-//     if (cartItems && productContainer){
-//         productContainer.innerHTML = "";
-//         Object.values(cartItems).map(item, () => {
-//             productContainer.innerHTML += `
-//             <div id="product>
-//             <ul><li>${item.name}</li></ul>
-//             </div>
-//             `
-//         });
-//     }
-// }
-function cartDisplay(){
+
+function cartDisplayPrice(){
     let cartItems = localStorage.getItem("productsInCart");
     cartItems = JSON.parse(cartItems);
     let result = Object.values(cartItems).filter(obj => {
         let itemName = obj.name;
-        console.log(itemName);
-        document.getElementById("products").append(itemName);
+        let itemPrice = obj.price;
+        console.log(itemName, "hello");
+        document.getElementById("priceDisplay").append(itemName,"(","R",itemPrice,")"," ");
     });
 }
 
+function cartDisplayName(){
+    let cartItems = localStorage.getItem("productsInCart");
+    cartItems = JSON.parse(cartItems);
+    let result = Object.values(cartItems).filter(obj => {
+        let itemName = obj.name;
+        let itemAmount = obj.inCart;
+        document.getElementById("nameDisplay").append(itemName,"(",itemAmount,")",",");
+    });
+}
 
+function cartDisplayTotal(){
+    let cartItems = localStorage.getItem("totalCost");
+    cartItems = JSON.parse(cartItems);
+    document.getElementById("totalDisplay").append("R",cartItems);
+}
+cartDisplayName();
+cartDisplayPrice();
+cartDisplayTotal();
 onLoadCartNumbers();
-cartDisplay();

@@ -283,7 +283,7 @@ input#contact-txt-input {
     padding-bottom: 10%;
 }
 /* cart */
-#cart-text{
+/* #cart-text{
     text-align: center;
 }
 #products{
@@ -294,7 +294,7 @@ input#contact-txt-input {
 }
 #total-price{
     padding-left:20% ;
-}
+} */
 #navigation-cart{
     text-align: center;
     position: -webkit-sticky;
@@ -306,4 +306,7 @@ input#contact-txt-input {
 #navigation-cart a{
     text-decoration: none;
     color: white;
+}
+#cart-container{
+    text-align: center;
 }
