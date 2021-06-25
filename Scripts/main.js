@@ -6,9 +6,12 @@ function initMap() {
         center: location
     });
 }
+//cart page
 
+//targeting shop items
 let carts = document.querySelectorAll("#add-cart")
 
+//each item product specfications
 let products = [
     {
         name : "MUSTARD SKIRT",
@@ -132,6 +135,8 @@ let products = [
     }
 ]
 
+
+//loop for adding cart items
 for (let i=0; i < carts.length; i++){
     carts[i].addEventListener("click", () =>{
         cartNumbers(products[i]);
@@ -139,6 +144,8 @@ for (let i=0; i < carts.length; i++){
     })
 }
 
+
+//onload amount of cart items
 function onLoadCartNumbers(){
     let productNumbers = localStorage.getItem("cartNumbers");
 
@@ -147,6 +154,7 @@ function onLoadCartNumbers(){
     }
 }
 
+//item amount in cart set and text content
 function cartNumbers(product){
     let productNumbers = localStorage.getItem("cartNumbers");
     productNumbers = parseInt(productNumbers)
@@ -160,6 +168,8 @@ function cartNumbers(product){
     setItems(product);
 }
 
+
+//setting items for products specifications
 function setItems(product){
     let cartItems = localStorage.getItem("productsInCart");
     cartItems = JSON.parse(cartItems);
@@ -180,6 +190,8 @@ function setItems(product){
     localStorage.setItem("productsInCart", JSON.stringify(cartItems));
 }
 
+
+//total cost setting 
 function totalCost(product){
     let cartCost = localStorage.getItem("totalCost");
     if (cartCost != null){
@@ -190,6 +202,8 @@ function totalCost(product){
     }
 }
 
+
+//price details display in cart
 function cartDisplayPrice(){
     let cartItems = localStorage.getItem("productsInCart");
     cartItems = JSON.parse(cartItems);
@@ -201,6 +215,8 @@ function cartDisplayPrice(){
     });
 }
 
+
+//items names display
 function cartDisplayName(){
     let cartItems = localStorage.getItem("productsInCart");
     cartItems = JSON.parse(cartItems);
@@ -211,11 +227,15 @@ function cartDisplayName(){
     });
 }
 
+
+//total cost display
 function cartDisplayTotal(){
     let cartItems = localStorage.getItem("totalCost");
     cartItems = JSON.parse(cartItems);
     document.getElementById("totalDisplay").append("R",cartItems);
 }
+
+//onload items
 cartDisplayName();
 cartDisplayPrice();
 cartDisplayTotal();

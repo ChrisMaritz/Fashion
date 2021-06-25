@@ -283,18 +283,6 @@ input#contact-txt-input {
     padding-bottom: 10%;
 }
 /* cart */
-/* #cart-text{
-    text-align: center;
-}
-#products{
-    padding-left:20% ;
-}
-#product-price{
-    padding-left:20% ;
-}
-#total-price{
-    padding-left:20% ;
-} */
 #navigation-cart{
     text-align: center;
     position: -webkit-sticky;
