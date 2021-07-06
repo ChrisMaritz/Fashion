@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="css/stylesheet.css">
     </head>
     <body>
-        <wrapper class="container-fluid">
+        <wrapper class="container-fluid" id="container">
             <!-- navigation tab -->
             <div class="row" id="navigation-shop">
                 <div class="col-sm-2">
@@ -27,7 +27,7 @@
                     <a href="about-index.html">ABOUT</a>
                 </div>
                 <div class="col-md-1">
-                    <a href="cart-index.html" id="cart"><ion-icon id="cart-icon" name="bag-outline"></ion-icon>CART <span>0</span></a>
+                    <a href="cart-index.html" id="cart"><ion-icon id="cart-icon" name="bag-outline"></ion-icon>CART <span>{{counter()}}</span></a>
                 </div>
             </div>
             <!-- shop  -->
@@ -40,13 +40,13 @@
                     <h4 id="title">MUSTARD SKIRT</h4>
                     <img src="Images/mustard-yellow-skirt.jpg" alt="woman wearing mustard yellow skirt">
                     <h3 id="price">R300,00</h3>
-                    <a id="add-cart" href="#"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                    <a id="add-cart" href="#" v-on:click = "looper('mustardSkirt','MUSTARD SKIRT',300)"><h4 id="add-to-cart" >ADD TO CART</h4></a>
                 </div>
                 <div class="col-sm-3" id="items-div"> 
                     <h4 id="title">OLIVE JERSEY</h4>
                     <img src="Images/olive-jersey.jpg" alt="olive-jersey">
                     <h3 id="price">R250,00</h3>
-                    <a id="add-cart" href="#"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                    <a @click="add_cart" id="add-cart" href="#" v-on:click = "looper('oliveJersey','OLIVE JERSEY',250)"><h4 id="add-to-cart">ADD TO CART</h4></a>
                 </div>
                 <div class="col-sm-3" id="items-div"> 
                     <h4 id="title">PINK JACKET</h4>
@@ -168,5 +168,6 @@
         </wrapper>
         <script src="https://unpkg.com/ionicons@5.5.1/dist/ionicons.js"></script>
     </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="Scripts/main.js"></script>
 </html>

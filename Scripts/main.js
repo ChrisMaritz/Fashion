@@ -137,106 +137,141 @@ let products = [
 
 
 //loop for adding cart items
-for (let i=0; i < carts.length; i++){
-    carts[i].addEventListener("click", () =>{
-        cartNumbers(products[i]);
-        totalCost(products[i]);
-    })
-}
+// for (let i=0; i < carts.length; i++){
+//     carts[i].addEventListener("click", () =>{
+//         cartNumbers(products[i]);
+//         totalCost(products[i]);
+//     })
+// }
 
 
 //onload amount of cart items
-function onLoadCartNumbers(){
-    let productNumbers = localStorage.getItem("cartNumbers");
+// function onLoadCartNumbers(){
+//     let productNumbers = localStorage.getItem("cartNumbers");
 
-    if (productNumbers){
-        document.querySelector("#cart span").textContent = productNumbers
-    }
-}
+//     if (productNumbers){
+//         document.querySelector("#cart span").textContent = productNumbers
+//     }
+// }
 
 //item amount in cart set and text content
-function cartNumbers(product){
-    let productNumbers = localStorage.getItem("cartNumbers");
-    productNumbers = parseInt(productNumbers)
-    if( productNumbers ){
-        localStorage.setItem("cartNumbers", productNumbers  + 1);
-        document.querySelector("#cart span").textContent = productNumbers + 1
-    } else {
-        localStorage.setItem("cartNumbers", 1);
-        document.querySelector("#cart span").textContent = 1
-    }
-    setItems(product);
-}
+// function cartNumbers(product){
+//     let productNumbers = localStorage.getItem("cartNumbers");
+//     productNumbers = parseInt(productNumbers)
+//     if( productNumbers ){
+//         localStorage.setItem("cartNumbers", productNumbers  + 1);
+//         document.querySelector("#cart span").textContent = productNumbers + 1
+//     } else {
+//         localStorage.setItem("cartNumbers", 1);
+//         document.querySelector("#cart span").textContent = 1
+//     }
+//     setItems(product);
+// }
 
 
 //setting items for products specifications
-function setItems(product){
-    let cartItems = localStorage.getItem("productsInCart");
-    cartItems = JSON.parse(cartItems);
-    if(cartItems != null){
-        if(cartItems[products.tag] == undefined){
-            cartItems = {
-                ...cartItems,
-                [product.tag] : product
-            }
-        }
-        cartItems[product.tag].inCart += 1;
-    }else{
-        product.inCart = 1
-        cartItems = {
-            [product.tag] : product
-        }
-    }
-    localStorage.setItem("productsInCart", JSON.stringify(cartItems));
-}
+// function setItems(product){
+//     let cartItems = localStorage.getItem("productsInCart");
+//     cartItems = JSON.parse(cartItems);
+//     if(cartItems != null){
+//         if(cartItems[products.tag] == undefined){
+//             cartItems = {
+//                 ...cartItems,
+//                 [product.tag] : product
+//             }
+//         }
+//         cartItems[product.tag].inCart += 1;
+//     }else{
+//         product.inCart = 1
+//         cartItems = {
+//             [product.tag] : product
+//         }
+//     }
+//     localStorage.setItem("productsInCart", JSON.stringify(cartItems));
+// }
 
 
-//total cost setting 
-function totalCost(product){
-    let cartCost = localStorage.getItem("totalCost");
-    if (cartCost != null){
-        cartCost = parseInt(cartCost);
-        localStorage.setItem("totalCost", cartCost + product.price);
-    }else{
-        localStorage.setItem("totalCost", product.price);
-    }
-}
+// //total cost setting 
+// function totalCost(product){
+//     let cartCost = localStorage.getItem("totalCost");
+//     if (cartCost != null){
+//         cartCost = parseInt(cartCost);
+//         localStorage.setItem("totalCost", cartCost + product.price);
+//     }else{
+//         localStorage.setItem("totalCost", product.price);
+//     }
+// }
 
 
-//price details display in cart
-function cartDisplayPrice(){
-    let cartItems = localStorage.getItem("productsInCart");
-    cartItems = JSON.parse(cartItems);
-    let result = Object.values(cartItems).filter(obj => {
-        let itemName = obj.name;
-        let itemPrice = obj.price;
-        console.log(itemName, "hello");
-        document.getElementById("priceDisplay").append(itemName,"(","R",itemPrice,")"," ");
-    });
-}
+// //price details display in cart
+// function cartDisplayPrice(){
+//     let cartItems = localStorage.getItem("productsInCart");
+//     cartItems = JSON.parse(cartItems);
+//     let result = Object.values(cartItems).filter(obj => {
+//         let itemName = obj.name;
+//         let itemPrice = obj.price;
+//         console.log(itemName, "hello");
+//         document.getElementById("priceDisplay").append(itemName,"(","R",itemPrice,")"," ");
+//     });
+// }
 
 
-//items names display
-function cartDisplayName(){
-    let cartItems = localStorage.getItem("productsInCart");
-    cartItems = JSON.parse(cartItems);
-    let result = Object.values(cartItems).filter(obj => {
-        let itemName = obj.name;
-        let itemAmount = obj.inCart;
-        document.getElementById("nameDisplay").append(itemName,"(",itemAmount,")",",");
-    });
-}
+// //items names display
+// function cartDisplayName(){
+//     let cartItems = localStorage.getItem("productsInCart");
+//     cartItems = JSON.parse(cartItems);
+//     let result = Object.values(cartItems).filter(obj => {
+//         let itemName = obj.name;
+//         let itemAmount = obj.inCart;
+//         document.getElementById("nameDisplay").append(itemName,"(",itemAmount,")",",");
+//     });
+// }
 
 
-//total cost display
-function cartDisplayTotal(){
-    let cartItems = localStorage.getItem("totalCost");
-    cartItems = JSON.parse(cartItems);
-    document.getElementById("totalDisplay").append("R",cartItems);
-}
+// //total cost display
+// function cartDisplayTotal(){
+//     let cartItems = localStorage.getItem("totalCost");
+//     cartItems = JSON.parse(cartItems);
+//     document.getElementById("totalDisplay").append("R",cartItems);
+// }
+new Vue ({
+    el : "#shop-items",
 
+    data : {
+        number : 0,
+        carts : document.getElementById("add-cart"),
+    },
+    methods : {
+        Objects(item,price){
+            this._item = item;
+            this._price = price;
+        },
+        selector(object,{select = [],index = 0}){
+            return object, select[index]
+        },
+        looper(key, name, price){
+            let object = {}
+                let cartItems = this.carts;
+                class item{
+                    constructor(keyC, name, price) {
+                        this.keys = keyC;
+                        this.item = name;
+                        this.prices = price;
+                    }
+                }
+                
+                object = new item (key, name, price);
+
+            localStorage.setItem("cartItems", JSON.stringify(object));
+            console.log(key)
+        },
+        test(){
+            console.log("hello")
+        },
+      },
+})
 //onload items
-cartDisplayName();
-cartDisplayPrice();
-cartDisplayTotal();
-onLoadCartNumbers();
+// cartDisplayName();
+// cartDisplayPrice();
+// cartDisplayTotal();
+// onLoadCartNumbers();
