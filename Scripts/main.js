@@ -241,6 +241,8 @@ new Vue ({
         number : 0,
         carts : document.getElementById("add-cart"),
     },
+    computed : {
+    },
     methods : {
         Objects(item,price){
             this._item = item;
@@ -264,6 +266,9 @@ new Vue ({
 
             localStorage.setItem("cartItems", JSON.stringify(object));
             console.log(key)
+        },
+        counter(){
+            localStorage.setItem("cartAmount",+1);
         },
         test(){
             console.log("hello")
