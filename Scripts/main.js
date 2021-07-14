@@ -235,13 +235,13 @@ let products = [
 //     document.getElementById("totalDisplay").append("R",cartItems);
 // }
 new Vue ({
-    el : "#shop-items",
+    el : "#all_shop_items",
 
     data : {
         number : 0,
         carts : document.getElementById("add-cart"),
-    },
-    computed : {
+        cartItems : [],
+        total : localStorage.getItem("cartAmount"),
     },
     methods : {
         Objects(item,price){
@@ -251,9 +251,7 @@ new Vue ({
         selector(object,{select = [],index = 0}){
             return object, select[index]
         },
-        looper(key, name, price){
-            let object = {}
-                let cartItems = this.carts;
+        addItems(key, name, price){
                 class item{
                     constructor(keyC, name, price) {
                         this.keys = keyC;
@@ -261,19 +259,36 @@ new Vue ({
                         this.prices = price;
                     }
                 }
-                
-                object = new item (key, name, price);
 
-            localStorage.setItem("cartItems", JSON.stringify(object));
-            console.log(key)
+                let object = new item (key, name, price);
+
+                this.cartItems.push(object);
+
+            localStorage.setItem("cartItems", JSON.stringify(this.cartItems));
+            console.log(this.cartItems)
         },
         counter(){
-            localStorage.setItem("cartAmount",+1);
+            this.total = parseInt(localStorage.getItem("cartAmount"));
+            this.total += 1;
+            localStorage.setItem("cartAmount",JSON.stringify(this.total));
         },
         test(){
             console.log("hello")
         },
       },
+})
+
+new Vue ({
+    el : "#navigation",
+      methods : {
+          cartCounter(){
+              number = localStorage.getItem("cartAmount")
+              for(x=0;x<= parseInt(number);x++){
+                    number = localStorage.getItem("cartAmount")
+                    return number
+              }
+          }
+      }
 })
 //onload items
 // cartDisplayName();
