@@ -242,6 +242,10 @@ new Vue ({
         carts : document.getElementById("add-cart"),
         cartItems : [],
         total : localStorage.getItem("cartAmount"),
+        array : []
+    },
+    mounted(){
+        console.log(typeof(this.array))
     },
     methods : {
         Objects(item,price){
@@ -262,10 +266,10 @@ new Vue ({
 
                 let object = new item (key, name, price);
 
-                this.cartItems.push(object);
-
+                this.cartItems.push("string");
+     
             localStorage.setItem("cartItems", JSON.stringify(this.cartItems));
-            console.log(this.cartItems)
+
         },
         counter(){
             this.total = parseInt(localStorage.getItem("cartAmount"));
