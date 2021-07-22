@@ -7,165 +7,167 @@
     <body>
         <wrapper class="container-fluid" id="container">
             <!-- navigation tab -->
-            <div id="navigation">
-                <div class="row" id="navigation-shop">
-                    <div class="col-sm-2">
-                        <a href="#top">-BACK TO TOP-</a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="index.html#featured-products-row">FEATURED</a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="index.html#collection-header">COLLECTION</a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="lookbook-index.html">LOOKBOOK</a> 
-                    </div>
-                    <div class="col-md-2">
-                        <a href="shop-index.html">SHOP</a>
-                    </div>
-                    <div class="col-md-1">
-                        <a href="about-index.html">ABOUT</a>
-                    </div>
-                    <div class="col-md-1">
-                        <a href="cart-index.html" id="cart">CART <span>{{total}}</span></a>
-                    </div>
-                </div>
-            </div>
-            <!-- shop  -->
-            <div class="row" id="top">
-                <h1 id="shop-txt">SHOP</h1>
-            </div>
-            <!-- shop items -->
-            <div id="all_shop_items">
-                <div class="row" id="shop-items">
-                    <div class="col-sm-3" id="items-div"> 
-                        <h4 id="title">MUSTARD SKIRT</h4>
-                        <img src="Images/mustard-yellow-skirt.jpg" alt="woman wearing mustard yellow skirt">
-                        <h3 id="price">R300,00</h3>
-                        <a id="add-cart" href="#!" v-on:click="addItems('mustardSkirt', 'MUSTARD SKIRT', 300),counter()"><h4 id="add-to-cart" >ADD TO CART</h4></a>
-                    </div>
-                    <div class="col-sm-3" id="items-div"> 
-                        <h4 id="title">OLIVE JERSEY</h4>
-                        <img src="Images/olive-jersey.jpg" alt="olive-jersey">
-                        <h3 id="price">R250,00</h3>
-                        <a id="add-cart" href="#!" v-on:click = "addItems('oliveJersey', 'OLIVE JERSEY', 250), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
-                    </div>
-                    <div class="col-sm-3" id="items-div"> 
-                        <h4 id="title">PINK JACKET</h4>
-                        <img src="Images/pink-drape.jpg" alt="pink jacket">
-                        <h3 id="price">R400,00</h3>
-                        <a id="add-cart" href="#!" v-on:click = "addItems('pinkJacket', 'PINK JACKET', 400), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
-                    </div>
-                    <div class="col-sm-3" id="items-div"> 
-                        <h4 id="title">RED JERSEY</h4>
-                        <img src="Images/red-jersey.jpg" alt="red-jersey">
-                        <h3 id="price">R300,00</h3>
-                        <a id="add-cart" href="#!" v-on:click = "addItems('redJersey', 'RED JERSEY', 300), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
+            <div id="whole_page">
+                <div id="navigation">
+                    <div class="row" id="navigation-shop">
+                        <div class="col-sm-2">
+                            <a href="#top">-BACK TO TOP-</a>
+                        </div>
+                        <div class="col-md-2">
+                            <a href="index.html#featured-products-row">FEATURED</a>
+                        </div>
+                        <div class="col-md-2">
+                            <a href="index.html#collection-header">COLLECTION</a>
+                        </div>
+                        <div class="col-md-2">
+                            <a href="lookbook-index.html">LOOKBOOK</a> 
+                        </div>
+                        <div class="col-md-2">
+                            <a href="shop-index.html">SHOP</a>
+                        </div>
+                        <div class="col-md-1">
+                            <a href="about-index.html">ABOUT</a>
+                        </div>
+                        <div class="col-md-1">
+                            <a href="cart-index.html" id="cart">CART <span id="cartNumber">{{ array }}</span></a>
+                        </div>
                     </div>
                 </div>
-                <div class="row" id="shop-items">
-                    <div class="col-sm-3" id="items-div"> 
-                        <h4 id="title">WAISTCOAT</h4>
-                        <img src="Images/man-waistcoat.jpg" alt="woman wearing sand coloured shirt">
-                        <h3 id="price">R300,00</h3>
-                        <a id="add-cart" href="#!" v-on:click = "addItems('waistcoat', 'WAISTCOAT', 300), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
-                    </div>
-                    <div class="col-sm-3" id="items-div"> 
-                        <h4 id="title">STRIPED PANTS</h4>
-                        <img src="Images/striped-pants.jpg" alt="white striped pants">
-                        <h3 id="price">R200,00</h3>
-                        <a id="add-cart" href="#!" v-on:click = "addItems('stripedPants', 'STRIPED PANTS', 200), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
-                    </div>
-                    <div class="col-sm-3" id="items-div"> 
-                        <h4 id="title">WOOL JACKET</h4>
-                        <img src="Images/wool-jacket.jpg" alt="wool-jacket">
-                        <h3 id="price">R500,00</h3>
-                        <a id="add-cart" href="#!"><h4 id="add-to-cart" v-on:click = "addItems('woolJacket', 'WOOL JACKET', 500), counter()">ADD TO CART</h4></a>
-                    </div>
-                    <div class="col-sm-3" id="items-div"> 
-                        <h4 id="title">FLUFFY JERSEY</h4>
-                        <img src="Images/yellow-fluffy.jpg" alt="fluffy-jersey">
-                        <h3 id="price">R350,00</h3>
-                        <a id="add-cart" href="#!" v-on:click = "addItems('fluffyJersey', 'FLUFFY JERSEY', 350), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
-                    </div>
+                <!-- shop  -->
+                <div class="row" id="top">
+                    <h1 id="shop-txt">SHOP</h1>
                 </div>
-                <div class="row" id="shop-items">
-                    <div class="col-sm-3" id="items-div"> 
-                        <h4 id="title">YELLOW JOGGERS</h4>
-                        <img src="Images/yellow-pants.jpg" alt="Yellow jogger pants">
-                        <h3 id="price">R200,00</h3>
-                        <a id="add-cart" href="#!" v-on:click = "addItems('yellowJoggers', 'YELLOW JOGGERS', 200), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                <!-- shop items -->
+                <div id="all_shop_items">
+                    <div class="row" id="shop-items">
+                        <div class="col-sm-3" id="items-div"> 
+                            <h4 id="title">MUSTARD SKIRT</h4>
+                            <img src="Images/mustard-yellow-skirt.jpg" alt="woman wearing mustard yellow skirt">
+                            <h3 id="price">R300,00</h3>
+                            <a id="add-cart" href="#!" v-on:click="addItems('mustardSkirt', 'MUSTARD SKIRT', 300),counter()"><h4 id="add-to-cart" >ADD TO CART</h4></a>
+                        </div>
+                        <div class="col-sm-3" id="items-div"> 
+                            <h4 id="title">OLIVE JERSEY</h4>
+                            <img src="Images/olive-jersey.jpg" alt="olive-jersey">
+                            <h3 id="price">R250,00</h3>
+                            <a id="add-cart" href="#!" v-on:click = "addItems('oliveJersey', 'OLIVE JERSEY', 250), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                        </div>
+                        <div class="col-sm-3" id="items-div"> 
+                            <h4 id="title">PINK JACKET</h4>
+                            <img src="Images/pink-drape.jpg" alt="pink jacket">
+                            <h3 id="price">R400,00</h3>
+                            <a id="add-cart" href="#!" v-on:click = "addItems('pinkJacket', 'PINK JACKET', 400), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                        </div>
+                        <div class="col-sm-3" id="items-div"> 
+                            <h4 id="title">RED JERSEY</h4>
+                            <img src="Images/red-jersey.jpg" alt="red-jersey">
+                            <h3 id="price">R300,00</h3>
+                            <a id="add-cart" href="#!" v-on:click = "addItems('redJersey', 'RED JERSEY', 300), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                        </div>
                     </div>
-                    <div class="col-sm-3" id="items-div"> 
-                        <h4 id="title">MUSTARD T-SHIRT</h4>
-                        <img src="Images/yellow-t-shirt.jpg" alt=" mustard yellow t-shirt">
-                        <h3 id="price">R200,00</h3>
-                        <a id="add-cart" href="#!" v-on:click = "addItems('mustardT-shirt', 'MUSTARD T-SHIRT', 200), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                    <div class="row" id="shop-items">
+                        <div class="col-sm-3" id="items-div"> 
+                            <h4 id="title">WAISTCOAT</h4>
+                            <img src="Images/man-waistcoat.jpg" alt="woman wearing sand coloured shirt">
+                            <h3 id="price">R300,00</h3>
+                            <a id="add-cart" href="#!" v-on:click = "addItems('waistcoat', 'WAISTCOAT', 300), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                        </div>
+                        <div class="col-sm-3" id="items-div"> 
+                            <h4 id="title">STRIPED PANTS</h4>
+                            <img src="Images/striped-pants.jpg" alt="white striped pants">
+                            <h3 id="price">R200,00</h3>
+                            <a id="add-cart" href="#!" v-on:click = "addItems('stripedPants', 'STRIPED PANTS', 200), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                        </div>
+                        <div class="col-sm-3" id="items-div"> 
+                            <h4 id="title">WOOL JACKET</h4>
+                            <img src="Images/wool-jacket.jpg" alt="wool-jacket">
+                            <h3 id="price">R500,00</h3>
+                            <a id="add-cart" href="#!"><h4 id="add-to-cart" v-on:click = "addItems('woolJacket', 'WOOL JACKET', 500), counter()">ADD TO CART</h4></a>
+                        </div>
+                        <div class="col-sm-3" id="items-div"> 
+                            <h4 id="title">FLUFFY JERSEY</h4>
+                            <img src="Images/yellow-fluffy.jpg" alt="fluffy-jersey">
+                            <h3 id="price">R350,00</h3>
+                            <a id="add-cart" href="#!" v-on:click = "addItems('fluffyJersey', 'FLUFFY JERSEY', 350), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                        </div>
                     </div>
-                    <div class="col-sm-3" id="items-div"> 
-                        <h4 id="title">LEAPOARD JACKET</h4>
-                        <img src="Images/leapoard-print.jpg" alt="leapoard patterned jacket">
-                        <h3 id="price">R300,00</h3>
-                        <a id="add-cart" href="#!" v-on:click = "addItems('leapoardJacket', 'LEOPOARD JACKET', 300), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                    <div class="row" id="shop-items">
+                        <div class="col-sm-3" id="items-div"> 
+                            <h4 id="title">YELLOW JOGGERS</h4>
+                            <img src="Images/yellow-pants.jpg" alt="Yellow jogger pants">
+                            <h3 id="price">R200,00</h3>
+                            <a id="add-cart" href="#!" v-on:click = "addItems('yellowJoggers', 'YELLOW JOGGERS', 200), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                        </div>
+                        <div class="col-sm-3" id="items-div"> 
+                            <h4 id="title">MUSTARD T-SHIRT</h4>
+                            <img src="Images/yellow-t-shirt.jpg" alt=" mustard yellow t-shirt">
+                            <h3 id="price">R200,00</h3>
+                            <a id="add-cart" href="#!" v-on:click = "addItems('mustardT-shirt', 'MUSTARD T-SHIRT', 200), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                        </div>
+                        <div class="col-sm-3" id="items-div"> 
+                            <h4 id="title">LEAPOARD JACKET</h4>
+                            <img src="Images/leapoard-print.jpg" alt="leapoard patterned jacket">
+                            <h3 id="price">R300,00</h3>
+                            <a id="add-cart" href="#!" v-on:click = "addItems('leapoardJacket', 'LEOPOARD JACKET', 300), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                        </div>
+                        <div class="col-sm-3" id="items-div"> 
+                            <h4 id="title">CORDUROY PANTS</h4>
+                            <img src="Images/brown-corduroy.jpg" alt="brown corduroy pants">
+                            <h3 id="price">R300,00</h3>
+                            <a id="add-cart" href="#!" v-on:click = "addItems('corduroyPants', 'CORDUROY PANTS', 300), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                        </div>
                     </div>
-                    <div class="col-sm-3" id="items-div"> 
-                        <h4 id="title">CORDUROY PANTS</h4>
-                        <img src="Images/brown-corduroy.jpg" alt="brown corduroy pants">
-                        <h3 id="price">R300,00</h3>
-                        <a id="add-cart" href="#!" v-on:click = "addItems('corduroyPants', 'CORDUROY PANTS', 300), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                    <div class="row" id="shop-items">
+                        <div class="col-sm-3" id="items-div"> 
+                            <h4 id="title">CAPPUCCINO SKIRT</h4>
+                            <img src="Images/cappucino-skirt.jpg" alt="cappucino dress">
+                            <h3 id="price">R250,00</h3>
+                            <a id="add-cart" href="#!" v-on:click = "addItems('cappucinoSkirt', 'CAPPUCCINO SKIRT', 250), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                        </div>
+                        <div class="col-sm-3" id="items-div"> 
+                            <h4 id="title">THIN BLOUSE</h4>
+                            <img src="Images/clear-shirt.jpg" alt="thin white blouse">
+                            <h3 id="price">R200,00</h3>
+                            <a id="add-cart" href="#!" v-on:click = "addItems('thinBlouse', 'THIN BLOUSE', 200), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                        </div>
+                        <div class="col-sm-3" id="items-div"> 
+                            <h4 id="title">DENIM JACKET</h4>
+                            <img src="Images/denim-jacket-female.jpg" alt="denim jacket">
+                            <h3 id="price">R300,00</h3>
+                            <a id="add-cart" href="#!"  v-on:click = "addItems('denimJacket', 'DENIM JACKET', 300), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                        </div>
+                        <div class="col-sm-3" id="items-div"> 
+                            <h4 id="title">DOTTED SKIRT</h4>
+                            <img src="Images/dotted-skirt.jpg" alt="white dress with black and white dots">
+                            <h3 id="price">R350,00</h3>
+                            <a id="add-cart" href="#!" v-on:click = "addItems('dottedSkirt', 'DOTTED SKIRT', 350), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                        </div>
                     </div>
-                </div>
-                <div class="row" id="shop-items">
-                    <div class="col-sm-3" id="items-div"> 
-                        <h4 id="title">CAPPUCCINO SKIRT</h4>
-                        <img src="Images/cappucino-skirt.jpg" alt="cappucino dress">
-                        <h3 id="price">R250,00</h3>
-                        <a id="add-cart" href="#!" v-on:click = "addItems('cappucinoSkirt', 'CAPPUCCINO SKIRT', 250), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
-                    </div>
-                    <div class="col-sm-3" id="items-div"> 
-                        <h4 id="title">THIN BLOUSE</h4>
-                        <img src="Images/clear-shirt.jpg" alt="thin white blouse">
-                        <h3 id="price">R200,00</h3>
-                        <a id="add-cart" href="#!" v-on:click = "addItems('thinBlouse', 'THIN BLOUSE', 200), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
-                    </div>
-                    <div class="col-sm-3" id="items-div"> 
-                        <h4 id="title">DENIM JACKET</h4>
-                        <img src="Images/denim-jacket-female.jpg" alt="denim jacket">
-                        <h3 id="price">R300,00</h3>
-                        <a id="add-cart" href="#!"  v-on:click = "addItems('denimJacket', 'DENIM JACKET', 300), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
-                    </div>
-                    <div class="col-sm-3" id="items-div"> 
-                        <h4 id="title">DOTTED SKIRT</h4>
-                        <img src="Images/dotted-skirt.jpg" alt="white dress with black and white dots">
-                        <h3 id="price">R350,00</h3>
-                        <a id="add-cart" href="#!" v-on:click = "addItems('dottedSkirt', 'DOTTED SKIRT', 350), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
-                    </div>
-                </div>
-                <div class="row" id="shop-items">
-                    <div class="col-sm-3" id="items-div"> 
-                        <h4 id="title">LIGHT DENIM JACKET</h4>
-                        <img src="Images/denim-jacket-male.jpg" alt="light deniim jacket">
-                        <h3 id="price">R350,00</h3>
-                        <a id="add-cart" href="#!" v-on:click = "addItems('lightDenimJacket', 'LIGHT DENIM JACKET', 350), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
-                    </div>
-                    <div class="col-sm-3" id="items-div"> 
-                        <h4 id="title">LOOSE DENIM PANTS</h4>
-                        <img src="Images/denim-loose-pants.jpg" alt="loose light denim pants">
-                        <h3 id="price">R300,00</h3>
-                        <a id="add-cart" href="#!" v-on:click = "addItems('looseDenimPants', 'LOOSE DENIM PANTS', 300), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
-                    </div>
-                    <div class="col-sm-3" id="items-div"> 
-                        <h4 id="title">CLASSIC DENIM PANTS</h4>
-                        <img src="Images/denim-pants2-female.jpg" alt="classic style denim pants">
-                        <h3 id="price">R300,00</h3>
-                        <a id="add-cart" href="#!" v-on:click = "addItems('classicDenimPants', 'CLASSIC DENIM PANTS', 300), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
-                    </div>
-                    <div class="col-sm-3" id="items-div"> 
-                        <h4 id="title">STRIPED SHIRT</h4>
-                        <img src="Images/man-striped-shirt.jpg" alt="blue, red and white striped shirts">
-                        <h3 id="price">R200,00</h3>
-                        <a id="add-cart" href="#!" v-on:click = "addItems('stripedShirt', 'STRIPED SHIRT', 200), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                    <div class="row" id="shop-items">
+                        <div class="col-sm-3" id="items-div"> 
+                            <h4 id="title">LIGHT DENIM JACKET</h4>
+                            <img src="Images/denim-jacket-male.jpg" alt="light deniim jacket">
+                            <h3 id="price">R350,00</h3>
+                            <a id="add-cart" href="#!" v-on:click = "addItems('lightDenimJacket', 'LIGHT DENIM JACKET', 350), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                        </div>
+                        <div class="col-sm-3" id="items-div"> 
+                            <h4 id="title">LOOSE DENIM PANTS</h4>
+                            <img src="Images/denim-loose-pants.jpg" alt="loose light denim pants">
+                            <h3 id="price">R300,00</h3>
+                            <a id="add-cart" href="#!" v-on:click = "addItems('looseDenimPants', 'LOOSE DENIM PANTS', 300), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                        </div>
+                        <div class="col-sm-3" id="items-div"> 
+                            <h4 id="title">CLASSIC DENIM PANTS</h4>
+                            <img src="Images/denim-pants2-female.jpg" alt="classic style denim pants">
+                            <h3 id="price">R300,00</h3>
+                            <a id="add-cart" href="#!" v-on:click = "addItems('classicDenimPants', 'CLASSIC DENIM PANTS', 300), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                        </div>
+                        <div class="col-sm-3" id="items-div"> 
+                            <h4 id="title">STRIPED SHIRT</h4>
+                            <img src="Images/man-striped-shirt.jpg" alt="blue, red and white striped shirts">
+                            <h3 id="price">R200,00</h3>
+                            <a id="add-cart" href="#!" v-on:click = "addItems('stripedShirt', 'STRIPED SHIRT', 200), counter()"><h4 id="add-to-cart">ADD TO CART</h4></a>
+                        </div>
                     </div>
                 </div>
             </div>

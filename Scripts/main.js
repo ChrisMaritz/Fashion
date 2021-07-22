@@ -235,17 +235,30 @@ let products = [
 //     document.getElementById("totalDisplay").append("R",cartItems);
 // }
 new Vue ({
-    el : "#all_shop_items",
+    el : "#whole_page",
 
     data : {
         number : 0,
         carts : document.getElementById("add-cart"),
         cartItems : [],
-        total : localStorage.getItem("cartAmount"),
-        array : []
+        total : 0,
+        array : localStorage.getItem("cartAmount")
     },
     mounted(){
-        console.log(typeof(this.array))
+        if(localStorage.getItem("cartItems")){
+            this.cartItems = JSON.parse(localStorage.getItem("cartItems"))
+        }else{console.log(this.cartItems)}
+
+        if(localStorage.getItem("cartAmount")){
+            this.total = JSON.parse(localStorage.getItem("cartAmount"))
+            console.log(this.total)
+        }else{
+            console.log(this.total)
+        }
+        //total cost
+        let object = JSON.parse(localStorage.getItem("cartItems"))
+        let totalCost = object.price
+        console.log(object.price);
     },
     methods : {
         Objects(item,price){
@@ -265,34 +278,53 @@ new Vue ({
                 }
 
                 let object = new item (key, name, price);
-
-                this.cartItems.push("string");
-     
+                console.log(typeof(this.cartItems));
+                this.cartItems.push(object);
             localStorage.setItem("cartItems", JSON.stringify(this.cartItems));
 
         },
         counter(){
-            this.total = parseInt(localStorage.getItem("cartAmount"));
             this.total += 1;
             localStorage.setItem("cartAmount",JSON.stringify(this.total));
         },
         test(){
             console.log("hello")
         },
+        value(){
+            return localStorage.getItem("cartItems")
+        }
       },
 })
 
 new Vue ({
-    el : "#navigation",
-      methods : {
-          cartCounter(){
-              number = localStorage.getItem("cartAmount")
-              for(x=0;x<= parseInt(number);x++){
-                    number = localStorage.getItem("cartAmount")
-                    return number
-              }
-          }
-      }
+    el : "#cart-container",
+    methods : {
+        
+        },
+    mounted(){
+        //item name display
+        let cartItems = localStorage.getItem("cartItems");
+            cartItems = JSON.parse(cartItems);
+            let result = Object.values(cartItems).filter(obj => {
+                let itemName = obj.item;
+                let itemPrice = obj.prices;
+                document.getElementById("nameDisplay").append(itemName,"(","R",itemPrice,") ","I I", " ");
+            });
+        //price display
+        let cartTotal = localStorage.getItem("cartItems");
+            cartTotal = JSON.parse(cartTotal);
+            let totalResult = Object.values(cartTotal).filter(obj => {
+                let itemTotal = obj.prices 
+                document.getElementById("totalDisplay").append(itemTotal);
+            });  
+        //total cost
+        sum = 0; 
+        let getPrices = JSON.parse(localStorage.getItem("cartItems"));
+        for (let key in getPrices){
+            sum += getPrices[key.prices]
+        }
+        console.log(sum);
+    }
 })
 //onload items
 // cartDisplayName();
