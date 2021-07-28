@@ -242,7 +242,7 @@ new Vue ({
         carts : document.getElementById("add-cart"),
         cartItems : [],
         total : 0,
-        array : localStorage.getItem("cartAmount")
+        array : 0
     },
     mounted(){
         if(localStorage.getItem("cartItems")){
@@ -257,8 +257,13 @@ new Vue ({
         }
         //total cost
         let object = JSON.parse(localStorage.getItem("cartItems"))
-        let totalCost = object.price
-        console.log(object.price);
+        let totalCost = parseInt(object.price)
+        console.log("number",totalCost);
+    },
+    computed :{
+        amount(){
+            return localStorage.getItem("cartAmount");
+        }
     },
     methods : {
         Objects(item,price){
@@ -297,9 +302,14 @@ new Vue ({
 })
 
 new Vue ({
-    el : "#cart-container",
+    el : "#vue_all",
     methods : {
         
+        },
+    computed :{
+            amount(){
+                return localStorage.getItem("cartAmount");
+            }
         },
     mounted(){
         //item name display
