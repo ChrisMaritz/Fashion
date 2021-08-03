@@ -242,20 +242,17 @@ new Vue ({
         carts : document.getElementById("add-cart"),
         cartItems : [],
         total : 0,
-        array : 0
+        array : parseInt(localStorage.getItem("cartAmount")),
+        value : null,
     },
     mounted(){
         if(localStorage.getItem("cartItems")){
             this.cartItems = JSON.parse(localStorage.getItem("cartItems"))
         }else{console.log(this.cartItems)}
 
-        if(localStorage.getItem("cartAmount")){
-            this.total = JSON.parse(localStorage.getItem("cartAmount"))
-            console.log(this.total)
-        }else{
-            console.log(this.total)
-        }
-        //total cost
+         this.total = parseInt(localStorage.getItem("cartAmount"))
+
+
         let object = JSON.parse(localStorage.getItem("cartItems"))
         let totalCost = parseInt(object.price)
         console.log("number",totalCost);
@@ -291,6 +288,8 @@ new Vue ({
         counter(){
             this.total += 1;
             localStorage.setItem("cartAmount",JSON.stringify(this.total));
+
+            this.total = parseInt(localStorage.getItem("cartAmount"));
         },
         test(){
             console.log("hello")
@@ -303,6 +302,9 @@ new Vue ({
 
 new Vue ({
     el : "#vue_all",
+    data : {
+        theSum : 0
+    },
     methods : {
         
         },
@@ -328,13 +330,26 @@ new Vue ({
                 document.getElementById("totalDisplay").append(itemTotal);
             });  
         //total cost
-        sum = 0; 
-        let getPrices = JSON.parse(localStorage.getItem("cartItems"));
-        for (let key in getPrices){
-            sum += getPrices[key.prices]
-        }
+        let object =JSON.parse(localStorage.getItem("cartItems"));
+        let newObject =object.map(this.fullCost);
+        let sum = (newObject.reduce(this.getSum, 0))
+        this.theSum = sum;
         console.log(sum);
-    }
+        // sum = 0; 
+        // let getPrices = JSON.parse(localStorage.getItem("cartItems"));
+        // for (let key in getPrices){
+        //     sum += getPrices[key.prices]
+        // }
+        // console.log(sum);
+    },
+    methods : {
+        fullCost(object){
+            console.log(object.prices);
+        },
+        getSum(total, num) {
+            return total + Math.round(num);
+          }
+    },
 })
 //onload items
 // cartDisplayName();
