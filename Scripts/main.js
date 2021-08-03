@@ -250,8 +250,10 @@ new Vue ({
             this.cartItems = JSON.parse(localStorage.getItem("cartItems"))
         }else{console.log(this.cartItems)}
 
-         this.total = parseInt(localStorage.getItem("cartAmount"))
+        console.log("here we are",typeof(this.total))
 
+
+        this.total = parseInt(localStorage.getItem("cartAmount"))
 
         let object = JSON.parse(localStorage.getItem("cartItems"))
         let totalCost = parseInt(object.price)
@@ -290,6 +292,7 @@ new Vue ({
             localStorage.setItem("cartAmount",JSON.stringify(this.total));
 
             this.total = parseInt(localStorage.getItem("cartAmount"));
+            
         },
         test(){
             console.log("hello")
@@ -322,13 +325,6 @@ new Vue ({
                 let itemPrice = obj.prices;
                 document.getElementById("nameDisplay").append(itemName,"(","R",itemPrice,") ","I I", " ");
             });
-        //price display
-        let cartTotal = localStorage.getItem("cartItems");
-            cartTotal = JSON.parse(cartTotal);
-            let totalResult = Object.values(cartTotal).filter(obj => {
-                let itemTotal = obj.prices 
-                document.getElementById("totalDisplay").append(itemTotal);
-            });  
         //total cost
         let object =JSON.parse(localStorage.getItem("cartItems"));
         let newObject =object.map(this.fullCost);
@@ -344,7 +340,7 @@ new Vue ({
     },
     methods : {
         fullCost(object){
-            console.log(object.prices);
+            return object.prices;
         },
         getSum(total, num) {
             return total + Math.round(num);
