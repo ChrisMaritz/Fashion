@@ -252,8 +252,12 @@ new Vue ({
 
         console.log("here we are",typeof(this.total))
 
-
-        this.total = parseInt(localStorage.getItem("cartAmount"))
+        if (Number.isInteger(parseInt(localStorage.getItem("cartAmount")))){
+            this.total = parseInt(localStorage.getItem("cartAmount"))
+        }
+        else if (Number.isInteger(parseInt(localStorage.getItem("cartAmount")) == false)){
+            localStorage.setItem("cartAmount", "0")
+        }
 
         let object = JSON.parse(localStorage.getItem("cartItems"))
         let totalCost = parseInt(object.price)
@@ -308,9 +312,6 @@ new Vue ({
     data : {
         theSum : 0
     },
-    methods : {
-        
-        },
     computed :{
             amount(){
                 return localStorage.getItem("cartAmount");
